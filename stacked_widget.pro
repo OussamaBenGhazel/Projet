@@ -14,7 +14,6 @@ SOURCES += \
     mainwindow.cpp \
     std_info.cpp \
     student_con.cpp \
-    time_table.cpp \
     timetable.cpp
 
 HEADERS += \
@@ -23,7 +22,6 @@ HEADERS += \
     mainwindow.h \
     std_info.h \
     student_con.h \
-    time_table.h \
     timetable.h
 
 FORMS += \
@@ -39,3 +37,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     resources.qrc
+
+#LIBS += -LC:\oraclexe\app\oracle\product\11.2.0\server\lib -lORACORE11 -lorahasgen11
+

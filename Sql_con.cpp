@@ -15,7 +15,7 @@ bool  SQL_con ::  connect (){
         return false ;
     }
     db = QSqlDatabase::addDatabase(this->db_type);
-    db.setHostName(hostname);
+//    db.setHostName(hostname);
     db.setUserName(username);
     db.setPassword(passwd);
     db.setDatabaseName(db_name);
@@ -54,7 +54,7 @@ bool SQL_con::check_user_exist(QString table_name, QString name, QString surname
 {
     QSqlQuery qry;
 
-    QString cmd = QString("select * from %1 WHERE name =:name AND surname=:surname").arg(table_name);
+    QString cmd = QString("select * from %1 WHERE NAME =:name AND SURNAME=:surname").arg(table_name);
     //    str
     qry.prepare(cmd);
     qry.bindValue(":name",name);
@@ -89,7 +89,7 @@ bool SQL_con::update_user(QString table_name, QVariantList &items)
     qDebug()<<"size don't match: "<<items.size();
     return false ;
     }
-    QString cmd = QString("UPDATE %1 SET password = ?, age = ?, class = ?, grade = ? where name = ? and surname =?" ).arg(table_name);
+    QString cmd = QString("UPDATE %1 SET PASSWORD = ?, AGE = ?, CLASS = ?, GRADE = ? where NAME = ? and SURNAME =?" ).arg(table_name);
     QSqlQuery qry;
 
     qry.prepare(cmd);
@@ -115,7 +115,7 @@ bool SQL_con::insert_user(QString table_name, QVariantList &items)
     return false ;
     }
     QSqlQuery qry ;
-    QString cmd = QString("INSERT INTO %1 (id, name, surname, password, age, class, grade) VALUES (?, ?, ?, ?, ?, ?, ?)").arg(table_name);
+    QString cmd = QString("INSERT INTO %1 (ID, NAME, SURNAME, PASSWORD, AGE, CLASS, GRADE) VALUES (?, ?, ?, ?, ?, ?, ?)").arg(table_name);
     qry.prepare(cmd);
     for (int i=0; i<items.size();++i){
     qry.addBindValue(items.at(i));
@@ -158,7 +158,7 @@ bool SQL_con::user_connection(QString table_name, QList<QString> &credentials)
 {
     QSqlQuery qry;
 
-    QString cmd = QString("select * from %1 WHERE name =? AND surname=? AND password =?").arg(table_name);
+    QString cmd = QString("select * from %1 WHERE NAME =? AND SURNAME=? AND PASSWORD=?").arg(table_name);
     //    str
     qry.prepare(cmd);
     for (int i=0; i<credentials.size();++i){
@@ -186,7 +186,7 @@ bool SQL_con::user_connection(QString table_name, QList<QString> &credentials)
 
 bool SQL_con::remove_user(QString table_name, QList<QString> &list)
 {
-    QString cmd =QString("DELETE FROM %1 WHERE name = ? and surname= ?").arg(table_name);
+    QString cmd =QString("DELETE FROM %1 WHERE NAME = ? and SURNAME= ?").arg(table_name);
     QSqlQuery qry;
     qry.prepare(cmd);
     for (int i=0; i<list.size();++i){

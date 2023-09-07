@@ -62,17 +62,17 @@ bool std_info::create_new_user(){
 }
 bool std_info::show_user_info(QString name,QString surname){
 
-    QList<QString> list = my_db->select_user(QString("select * from student WHERE name= '%1' and surname= '%2'").arg(name).arg(surname));
+    QList<QString> list = my_db->select_user(QString("select * from STUDENT_TABLE WHERE NAME= '%1' and SURNAME= '%2'").arg(name).arg(surname));
     for (int i= 0; i<list.size();++i)
     {
         qDebug()<<list.at(i);
     }
-    ui->name_edit->setText(list.at(1));
-    ui->surname_edit->setText(list.at(2));
-    ui->passwd_edit->setText(list.at(3)) ;
-    ui->age_edit->setText(list.at(4)) ;
-    ui->class_edit->setDisplayIntegerBase(list.at(5).toInt())  ;//setText()
-    ui->grade_edit->setText(list.at(6)) ;
+    ui->name_edit->setText(list.at(2));
+    ui->surname_edit->setText(list.at(3));
+    ui->passwd_edit->setText(list.at(4)) ;
+    ui->age_edit->setText(list.at(5)) ;
+    ui->class_edit->setDisplayIntegerBase(list.at(6).toInt())  ;//setText()
+    ui->grade_edit->setText(list.at(7)) ;
     return false;
 }
 
@@ -96,7 +96,7 @@ bool std_info::update_user_data(){
 
         QVariantList list ;
     list << pass<<age<<std_class<<grade<<name <<surname ;
-        my_db->update_user("student",list);
+        my_db->update_user("STUDENT_TABLE",list);
         //        my_db->insert_to_db(list);
         //        UPDATE `student` SET `password` = '555', `age` = '22', `class` = '2', `grade` = '12.0' WHERE name and suranme
 

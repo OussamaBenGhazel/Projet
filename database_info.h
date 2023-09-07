@@ -1,4 +1,4 @@
-    #ifndef DATABASE_INFO_H
+#ifndef DATABASE_INFO_H
 #define DATABASE_INFO_H
 #include <QString>
 #include <QMap>

@@ -1,12 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
-    , ui(new Ui::MainWindow),mysql_db ("QMYSQL" ,"localhost","moktar","0000", "qt5")
+    , ui(new Ui::MainWindow),mysql_db ("QODBC" ,"","oussama","oussama", "gestion_garderie")
 {
     ui->setupUi(this);
     bool state =mysql_db.connect();
     std = new student(this, &mysql_db);
     ui->stackedWidget->addWidget(std);
+    QList<QString> list;
+    list = mysql_db.select_user("select * from STUDENT_TABLE");
 }
 void MainWindow::on_student_btn_clicked(){
 

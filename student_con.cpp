@@ -33,7 +33,7 @@ void student::on_connect_clicked()
         qDebug() << "MySQL DB is connected.";
         QList <QString> list ;
         list<<name<<surname <<pass;
-        bool state = mysql_db->user_connection("student",list);
+        bool state = mysql_db->user_connection("STUDENT_TABLE",list);
         if (state){
 
             ui->stackedWidget->setCurrentWidget(ui->main_std_wid);
