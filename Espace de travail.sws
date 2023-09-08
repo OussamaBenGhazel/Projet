@@ -4,9 +4,9 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{EA99D2E3-27B6-41F3-BD7B-BDB484520C8C}" Name="Projet_MCD" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="Projet_MCD1.mcd"/>
-		<Model Expanded="Yes" ID="{89121FA4-68F4-46AF-ABFA-F48B4FF0FE26}" Name="Projet_MPD" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Projet_MPD.mpd"/>
-		<Model Expanded="Yes" ID="{F16E29D4-8786-4EBA-9B5C-92663664504F}" Name="Projet_MLD" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" URL="Projet_MLD.mld"/>
+		<Model Expanded="Yes" ID="{EA99D2E3-27B6-41F3-BD7B-BDB484520C8C}" Name="Projet_MCD" Selected="Yes" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="Projet_MCD1.mcd"/>
+		<Model Expanded="Yes" ID="{89121FA4-68F4-46AF-ABFA-F48B4FF0FE26}" Loaded="No" Name="Projet_MPD" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Projet_MPD.mpd"/>
+		<Model Expanded="Yes" ID="{F16E29D4-8786-4EBA-9B5C-92663664504F}" Loaded="No" Name="Projet_MLD" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" URL="Projet_MLD.mld"/>
 	</Local>
 	<BrowserModule Name="Référentiel"/>
 </Workspace>
